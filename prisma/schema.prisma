@@ -8,10 +8,14 @@ generator client {
 }
 
 model Referral {
-  id        Int      @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   referrerName  String
-  referrerEmail String @unique
+  referrerEmail String   @unique
   refereeName   String
-  refereeEmail  String @unique
+  refereeEmail  String   @unique
   createdAt     DateTime @default(now())
 }
+
+
+// run command for migration
+// npx prisma migrate dev --name init

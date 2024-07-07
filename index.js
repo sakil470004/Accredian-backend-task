@@ -36,7 +36,7 @@ app.post("/addRefer", async (req, res) => {
     const mailOptions = await {
       from: {
         name: "Referral App",
-        address: process.env.EMAIL_USER,
+        address: user?.referrerEmail,
       },
       to: user?.refereeEmail,
       subject: "You have been referred!",

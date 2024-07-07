@@ -33,7 +33,7 @@ app.post("/addRefer", async (req, res) => {
     });
 
     // for sending email
-    const mailOptions =await {
+    const mailOptions = await {
       from: {
         name: "Referral App",
         address: process.env.EMAIL_USER,
@@ -47,6 +47,9 @@ app.post("/addRefer", async (req, res) => {
   } catch (error) {
     res.status(400).send({ message: error.message }); // Send error message if something goes wrong
   }
+});
+app.get("/", (req, res) => {
+  res.send("Server is running");
 });
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);

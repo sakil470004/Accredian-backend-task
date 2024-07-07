@@ -8,6 +8,10 @@ const port = 3000;
 
 app.use(cors)
 app.use(express.json());
+app.get('/addUser',async(req,res)=>{
+// create user
+
+})
 
 app.post('/api/referrals', async (req, res) => {
   const { referrerName, referrerEmail, refereeName, refereeEmail } = req.body;
